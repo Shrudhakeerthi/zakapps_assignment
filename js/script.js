@@ -1,5 +1,5 @@
 
-// PRODUCT GRID SETUP
+// PRODUCT GRID 
 
 
 const productGrid = document.querySelector(".product-grid");
@@ -151,9 +151,3 @@ function buyNow() {
 
 
 
-// OPTIONAL: HIGHLIGHT ACTIVE FILTER STATE (CLEAN UX)
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  filterProducts();
-});
