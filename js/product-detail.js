@@ -1,3 +1,4 @@
+
 const products = {
 
   1: {
@@ -76,7 +77,7 @@ const products = {
 
 
 
-// FORMAT CURRENCY (INR)
+<--- FORMAT CURRENCY (INR)-->
 
 
 function formatINR(value) {
@@ -88,7 +89,7 @@ function formatINR(value) {
 
 
 
-// GET PRODUCT ID
+<-- GET PRODUCT ID--->
 
 
 const params = new URLSearchParams(window.location.search);
@@ -164,7 +165,7 @@ updateQty();
 
 
 
-// ADD TO CART
+<---ADD TO CART-->
 
 
 function addToCart() {
