@@ -1,5 +1,5 @@
 // =========================
-// PRODUCT GRID (UNCHANGED)
+// PRODUCT GRID 
 // =========================
 
 const productGrid = document.querySelector(".product-grid");
