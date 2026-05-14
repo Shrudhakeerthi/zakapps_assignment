@@ -1,6 +1,6 @@
-
-// PRODUCT GRID 
-
+// =========================
+// PRODUCT GRID (UNCHANGED)
+// =========================
 
 const productGrid = document.querySelector(".product-grid");
 const productCards = Array.from(document.querySelectorAll(".product-card"));
@@ -12,10 +12,7 @@ const ratingFilters = document.querySelectorAll(".rating-filter");
 let activeCards = [...productCards];
 
 
-
 // SORTING
-
-
 if (sortSelect) {
   sortSelect.addEventListener("change", () => {
 
@@ -44,10 +41,7 @@ if (sortSelect) {
 }
 
 
-
 // FILTERING
-
-
 function filterProducts() {
 
   const selectedFlavours = Array.from(flavourFilters)
@@ -72,13 +66,8 @@ function filterProducts() {
 
       ratingMatch = selectedRatings.some(value => {
 
-        if (value === "4-above") {
-          return rating >= 4;
-        }
-
-        if (value === "3-below") {
-          return rating <= 3;
-        }
+        if (value === "4-above") return rating >= 4;
+        if (value === "3-below") return rating <= 3;
 
         return false;
       });
@@ -91,11 +80,7 @@ function filterProducts() {
 }
 
 
-
-
-// RENDER FUNCTION
-
-
+// RENDER
 function render(list) {
   if (!productGrid) return;
 
@@ -104,10 +89,7 @@ function render(list) {
 }
 
 
-
 // FILTER EVENTS
-
-
 flavourFilters.forEach(f =>
   f.addEventListener("change", filterProducts)
 );
@@ -118,36 +100,47 @@ ratingFilters.forEach(f =>
 
 
 
-// CART SYSTEM (STORAGE)
+// =========================
+//  CART SYSTEM 
+// =========================
 
-
-let cartCount = Number(localStorage.getItem("cartCount")) || 0;
-
-const cartElement = document.getElementById("cart-count");
-
-if (cartElement) {
-  cartElement.textContent = cartCount;
+function getCart() {
+  return Number(localStorage.getItem("cartCount")) || 0;
 }
 
+function setCart(value) {
+  localStorage.setItem("cartCount", value);
+  updateCartUI();
+}
+
+function updateCartUI() {
+  const el = document.getElementById("cart-count");
+  if (el) el.textContent = getCart();
+}
+
+window.addEventListener("load", updateCartUI);
+
+// =========================
+// EVENT LISTENERS 
+// =========================
+
+// ADD TO CART EVENT
+window.addEventListener("add-to-cart", (e) => {
+  const qty = e.detail?.qty || 1;
+  setCart(getCart() + qty);
+});
+
+// RESET CART EVENT
+window.addEventListener("reset-cart", () => {
+  setCart(0);
+});
+
+// OPTIONAL DIRECT CALLS (for safety)
 function addToCart() {
-  cartCount++;
-  localStorage.setItem("cartCount", cartCount);
-
-  if (cartElement) {
-    cartElement.textContent = cartCount;
-  }
-
-  alert("Product added to cart");
+  setCart(getCart() + 1);
 }
-
-
-
-// BUY NOW BUTTON
-
 
 function buyNow() {
+  setCart(0);
   window.location.href = "order-success.html";
 }
-
-
-

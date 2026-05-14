@@ -148,7 +148,7 @@
 
 
     // =========================
-    // FORMAT INR
+    // INR
     // =========================
 
     function formatINR(value) {
@@ -194,33 +194,9 @@
     }
 
 
-    // =========================
-    // CART SYSTEM
-    // =========================
-
-    let cartCount = Number(localStorage.getItem("cartCount")) || 0;
-
-    const cartElement = document.getElementById("cart-count");
-
-    if (cartElement) {
-      cartElement.textContent = cartCount;
-    }
-
-
-    function addToCart() {
-      cartCount++;
-      localStorage.setItem("cartCount", cartCount);
-      cartElement.textContent = cartCount;
-      alert("Product added to cart");
-    }
-
-
-    function buyNow() {
-      window.location.href = "order-success.html";
-    }
 
   </script>
-
+<script src="js/script.js"></script>
 </body>
 
 </html>
