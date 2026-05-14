@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Detail</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h2>ABOKICHI</h2>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li>About</li>
+      <li>Contact</li>
+      <li>Cart: <span id="cart-count">0</span></li>
+    </ul>
+  </nav>
+
+  <!-- PRODUCT DETAIL -->
+  <section class="detail-page">
+
+    <!-- LEFT -->
+    <div class="detail-left">
+      <div class="main-image-box">
+        <img id="main-image" src="" alt="Product Image">
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="detail-right">
+
+      <p class="breadcrumb">Shop > Product</p>
+
+      <h1 id="product-name"></h1>
+
+      <div class="price-row">
+        <span class="new-price" id="product-price"></span>
+        <span class="old-price" id="old-price"></span>
+      </div>
+
+      <div class="reviews">
+        ★★★★★ <span id="review-count"></span>
+      </div>
+
+      <p id="product-description" class="product-description"></p>
+
+      <!-- BUTTONS -->
+      <div class="button-row">
+        <button class="cart-btn" onclick="addToCart()">ADD TO CART</button>
+        <button class="buy-btn" onclick="buyNow()">BUY NOW</button>
+      </div>
+
+      <div class="wishlist">♡ WISHLIST</div>
+
+    </div>
+
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+
+    // =========================
+    // PRODUCT DATA (FIXED - NO $)
+    // =========================
+
+    const products = {
+
+      1: {
+        name: "VANILLA",
+        price: 100,
+        oldPrice: 150,
+        reviews: "32 Reviews",
+        image: "images/Screenshot 2026-05-13 182208.png",
+        description: "Premium vanilla flavour made with rich ingredients. Perfect for desserts and drinks."
+      },
+
+      2: {
+        name: "CHOCOLATE",
+        price: 145,
+        oldPrice: 180,
+        reviews: "24 Reviews",
+        image: "images/Screenshot 2026-05-13 182145.png",
+        description: "Smooth chocolate flavour for cakes, milkshakes and desserts."
+      },
+
+      3: {
+        name: "BLACK CURRENT",
+        price: 190,
+        oldPrice: 210,
+        reviews: "18 Reviews",
+        image: "images/image.png",
+        description: "Fresh fruity black current flavour with premium taste."
+      },
+
+      4: {
+        name: "STRAWBERRY",
+        price: 130,
+        oldPrice: 156,
+        reviews: "29 Reviews",
+        image: "images/Screenshot 2026-05-13 203015.png",
+        description: "Sweet strawberry flavour for desserts and beverages."
+      },
+
+      5: {
+        name: "VANILLA DELUXE",
+        price: 230,
+        oldPrice: 270,
+        reviews: "40 Reviews",
+        image: "images/Screenshot 2026-05-13 182208.png",
+        description: "Rich deluxe vanilla with smooth aroma and taste."
+      },
+
+      6: {
+        name: "DARK CHOCOLATE",
+        price: 215,
+        oldPrice: 234,
+        reviews: "20 Reviews",
+        image: "images/Screenshot 2026-05-13 182145.png",
+        description: "Strong cocoa dark chocolate flavour for premium desserts."
+      },
+
+      7: {
+        name: "BLACK CURRENT PREMIUM",
+        price: 256,
+        oldPrice: 300,
+        reviews: "20 Reviews",
+        image: "images/image.png",
+        description: "Premium black current flavour with rich fruity taste."
+      },
+
+      8: {
+        name: "STRAWBERRY PREMIUM",
+        price: 340,
+        oldPrice: 389,
+        reviews: "20 Reviews",
+        image: "images/Screenshot 2026-05-13 203015.png",
+        description: "Premium strawberry flavour with creamy texture."
+      }
+
+    };
+
+
+    // =========================
+    // FORMAT INR
+    // =========================
+
+    function formatINR(value) {
+      return new Intl.NumberFormat("en-IN", {
+        style: "currency",
+        currency: "INR"
+      }).format(value);
+    }
+
+
+    // =========================
+    // GET PRODUCT ID
+    // =========================
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const product = products[id];
+
+
+    // =========================
+    // LOAD PRODUCT
+    // =========================
+
+    if (product) {
+
+      document.getElementById("product-name").textContent = product.name;
+
+      document.getElementById("product-price").textContent =
+        formatINR(product.price);
+
+      document.getElementById("old-price").textContent =
+        formatINR(product.oldPrice);
+
+      document.getElementById("review-count").textContent =
+        product.reviews;
+
+      document.getElementById("main-image").src =
+        product.image;
+
+      document.getElementById("product-description").textContent =
+        product.description;
+
+    }
+
+
+    // =========================
+    // CART SYSTEM
+    // =========================
+
+    let cartCount = Number(localStorage.getItem("cartCount")) || 0;
+
+    const cartElement = document.getElementById("cart-count");
+
+    if (cartElement) {
+      cartElement.textContent = cartCount;
+    }
+
+
+    function addToCart() {
+      cartCount++;
+      localStorage.setItem("cartCount", cartCount);
+      cartElement.textContent = cartCount;
+      alert("Product added to cart");
+    }
+
+
+    function buyNow() {
+      window.location.href = "order-success.html";
+    }
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Products</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <h2>SHOP</h2>
+
+    <ul class="nav-links">
+      <li>Home</li>
+      <li>Products</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+
+  </nav>
+
+  <!-- PRODUCTS SECTION -->
+
+  <section class="products">
+
+    <h1 style="text-align:center; margin-bottom:40px;">
+      Product Listing
+    </h1>
+
+    <!-- FILTER + SORT -->
+
+    <div class="filter-sort-container">
+
+      <!-- FILTERS -->
+
+      <div class="filters">
+
+        <h3>Filter</h3>
+
+        <!-- FLAVOURS -->
+
+        <div class="filter-group">
+
+          <h4>Flavours</h4>
+
+          <label>
+            <input type="checkbox"
+                   value="strawberry"
+                   class="flavour-filter">
+            Strawberry
+          </label>
+
+          <label>
+            <input type="checkbox"
+                   value="chocolate"
+                   class="flavour-filter">
+            Chocolate
+          </label>
+
+          <label>
+            <input type="checkbox"
+                   value="blackcurrent"
+                   class="flavour-filter">
+            Black Current
+          </label>
+
+          <label>
+            <input type="checkbox"
+                   value="vanilla"
+                   class="flavour-filter">
+            Vanilla
+          </label>
+
+        </div>
+
+        <!-- RATINGS -->
+
+        <div class="filter-group">
+
+          <h4>Ratings</h4>
+
+          <label>
+
+            <input type="checkbox"
+                   value="4-above"
+                   class="rating-filter">
+
+            ★★★★ & Above
+
+          </label>
+
+          <label>
+
+            <input type="checkbox"
+                   value="3-below"
+                   class="rating-filter">
+
+            ★★★ & Below
+
+          </label>
+
+        </div>
+
+      </div>
+
+      <!-- SORT -->
+
+      <div class="sort-box">
+
+        <label for="sort">
+          Sort By:
+        </label>
+
+        <select id="sort">
+
+          <option value="default">
+            Default
+          </option>
+
+          <option value="low-high">
+            Price: Low to High
+          </option>
+
+          <option value="high-low">
+            Price: High to Low
+          </option>
+
+          <option value="a-z">
+            Alphabetically A-Z
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <!-- PRODUCT GRID -->
+
+    <div class="product-grid">
+
+      <!-- PRODUCT 1 -->
+
+      <a href="product-detail.html?id=1"
+         class="product-card"
+         data-price="135"
+         data-rating="5"
+         data-flavour="vanilla"
+         data-name="Vanilla">
+
+        <img src="images/Screenshot 2026-05-13 182208.png">
+
+        <h3>VANILLA(100 g)</h3>
+
+        <div class="price">
+          <span class="new-price">Rs.100</span>
+          <span class="old-price">Rs.150</span>
+        </div>
+
+        <div class="reviews">
+          ★★★★★ 32 Reviews
+        </div>
+
+      </a>
+
+
+      <!-- PRODUCT 2 -->
+
+      <a href="product-detail.html?id=2"
+         class="product-card"
+         data-price="34"
+         data-rating="3"
+         data-flavour="chocolate"
+         data-name="Chocolate">
+
+        <img src="images/Screenshot 2026-05-13 182145.png">
+
+        <h3>CHOCOLATE(100 g)</h3>
+
+        <div class="price">
+          <span class="new-price">Rs.145</span>
+           <span class="old-price">Rs.180</span>
+
+        </div>
+
+        <div class="reviews">
+          ★★★ 24 Reviews
+        </div>
+
+      </a>
+
+
+      <!-- PRODUCT 3 -->
+
+      <a href="product-detail.html?id=3"
+         class="product-card"
+         data-price="13.99"
+         data-rating="5"
+         data-flavour="blackcurrent"
+         data-name="Black Current">
+
+        <img src="images/image.png">
+
+        <h3>BLACK CURRENT(100 g)</h3>
+
+        <div class="price">
+          <span class="new-price">Rs.190</span>
+           <span class="old-price">Rs.210</span>
+        </div>
+
+        <div class="reviews">
+          ★★★★★ 18 Reviews
+        </div>
+
+      </a>
+
+
+      <!-- PRODUCT 4 -->
+
+      <a href="product-detail.html?id=4"
+         class="product-card"
+         data-price="21"
+         data-rating="2"
+         data-flavour="strawberry"
+         data-name="Strawberry">
+
+        <img src="images/Screenshot 2026-05-13 203015.png">
+
+        <h3>STRAWBERRY(100 g)</h3>
+
+        <div class="price">
+          <span class="new-price">Rs.130</span>
+           <span class="old-price">Rs.156</span>
+        </div>
+
+        <div class="reviews">
+          ★★ 29 Reviews
+        </div>
+
+      </a>
+
+
+      <!-- PRODUCT 5 -->
+
+      <a href="product-detail.html?id=5"
+         class="product-card"
+         data-price="18"
+         data-rating="5"
+         data-flavour="vanilla"
+         data-name="Vanilla Deluxe">
+
+        <img src="images/Screenshot 2026-05-13 182208.png">
+
+        <h3>VANILLA(250 g)</h3>
+
+        <div class="price">
+          <span class="new-price">Rs.230</span>
+           <span class="old-price">Rs.270</span>
+        </div>
+
+        <div class="reviews">
+          ★★★★★ 40 Reviews
+        </div>
+
+      </a>
+
+
+      <!-- PRODUCT 6 -->
+
+      <a href="product-detail.html?id=6"
+         class="product-card"
+         data-price="26"
+         data-rating="4"
+         data-flavour="chocolate"
+         data-name="Dark Chocolate">
+
+        <img src="images/Screenshot 2026-05-13 182145.png">
+
+        <h3>CHOCOLATE(250 g)</h3>
+
+        <div class="price">
+          <span class="new-price">Rs.215</span>
+           <span class="old-price">Rs.234</span>
+        </div>
+
+        <div class="reviews">
+          ★★★★ 20 Reviews
+        </div>
+
+      </a>
+
+
+      <!-- PRODUCT 7 -->
+
+      <a href="product-detail.html?id=7"
+         class="product-card"
+         data-price="26"
+         data-rating="4"
+         data-flavour="blackcurrent"
+         data-name="Black Current Premium">
+
+        <img src="images/image.png">
+
+        <h3>BLACK CURRENT(250 g)</h3>
+
+        <div class="price">
+          <span class="new-price">Rs.256</span>
+           <span class="old-price">Rs.300</span>
+        </div>
+
+        <div class="reviews">
+          ★★★★ 20 Reviews
+        </div>
+
+      </a>
+
+
+      <!-- PRODUCT 8 -->
+
+      <a href="product-detail.html?id=8"
+         class="product-card"
+         data-price="26"
+         data-rating="4"
+         data-flavour="strawberry"
+         data-name="Strawberry Premium">
+
+        <img src="images/Screenshot 2026-05-13 203015.png">
+
+        <h3>STRAWBERRY(250 g)</h3>
+
+        <div class="price">
+          <span class="new-price">Rs.340</span>
+           <span class="old-price">Rs.389</span>
+        </div>
+
+        <div class="reviews">
+          ★★★★ 20 Reviews
+        </div>
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- JAVASCRIPT -->
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
