@@ -1,13 +1,9 @@
-// =========================
-// PRODUCTS DATA (CLEAN - NO $)
-// =========================
-
 const products = {
 
   1: {
     name: "VANILLA",
-    price: 135,
-    oldPrice: 167.88,
+    price: 100,
+    oldPrice: 150,
     reviews: "32 Reviews",
     image: "images/Screenshot 2026-05-13 182208.png",
     description: "Premium vanilla flavour made with rich organic ingredients. Perfect for desserts and beverages."
@@ -15,8 +11,8 @@ const products = {
 
   2: {
     name: "CHOCOLATE",
-    price: 34,
-    oldPrice: 40,
+    price: 145,
+    oldPrice: 180,
     reviews: "24 Reviews",
     image: "images/Screenshot 2026-05-13 182145.png",
     description: "Smooth chocolate flavour crafted for cakes, milkshakes and sweet recipes."
@@ -24,8 +20,8 @@ const products = {
 
   3: {
     name: "BLACK CURRENT",
-    price: 13.99,
-    oldPrice: 18,
+    price: 190,
+    oldPrice: 210,
     reviews: "18 Reviews",
     image: "images/image.png",
     description: "Fresh black current flavour with fruity taste and premium quality ingredients."
@@ -33,8 +29,8 @@ const products = {
 
   4: {
     name: "STRAWBERRY",
-    price: 21,
-    oldPrice: 27,
+    price: 130,
+    oldPrice: 156,
     reviews: "29 Reviews",
     image: "images/Screenshot 2026-05-13 203015.png",
     description: "Sweet strawberry flavour perfect for desserts, ice creams and drinks."
@@ -42,8 +38,8 @@ const products = {
 
   5: {
     name: "VANILLA DELUXE",
-    price: 18,
-    oldPrice: 24,
+    price:230,
+    oldPrice: 270,
     reviews: "40 Reviews",
     image: "images/Screenshot 2026-05-13 182208.png",
     description: "Rich deluxe vanilla flavour with smooth texture and natural aroma."
@@ -51,8 +47,8 @@ const products = {
 
   6: {
     name: "DARK CHOCOLATE",
-    price: 26,
-    oldPrice: 31,
+    price: 215,
+    oldPrice: 234,
     reviews: "20 Reviews",
     image: "images/Screenshot 2026-05-13 182145.png",
     description: "Dark chocolate flavour with intense cocoa taste and premium ingredients."
@@ -60,8 +56,8 @@ const products = {
 
   7: {
     name: "BLACK CURRENT PREMIUM",
-    price: 26,
-    oldPrice: 31,
+    price: 256,
+    oldPrice: 300,
     reviews: "20 Reviews",
     image: "images/image.png",
     description: "Premium black current flavour with refreshing fruity sweetness."
@@ -69,8 +65,8 @@ const products = {
 
   8: {
     name: "STRAWBERRY PREMIUM",
-    price: 26,
-    oldPrice: 31,
+    price: 340,
+    oldPrice: 389,
     reviews: "20 Reviews",
     image: "images/Screenshot 2026-05-13 203015.png",
     description: "Premium strawberry flavour with rich creamy texture and fresh taste."
@@ -79,9 +75,9 @@ const products = {
 };
 
 
-// =========================
+
 // FORMAT CURRENCY (INR)
-// =========================
+
 
 function formatINR(value) {
   return new Intl.NumberFormat("en-IN", {
@@ -91,18 +87,18 @@ function formatINR(value) {
 }
 
 
-// =========================
+
 // GET PRODUCT ID
-// =========================
+
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const product = products[id];
 
 
-// =========================
+
 // LOAD PRODUCT
-// =========================
+
 
 if (product) {
 
@@ -125,9 +121,9 @@ if (product) {
 }
 
 
-// =========================
+
 // CART COUNT
-// =========================
+
 
 let cartCount = Number(localStorage.getItem("cartCount")) || 0;
 
@@ -138,9 +134,10 @@ if (cartElement) {
 }
 
 
-// =========================
+
 // QUANTITY SYSTEM (SAFE)
-// =========================
+
+
 
 let quantity = 1;
 
@@ -166,9 +163,9 @@ function decreaseQty() {
 updateQty();
 
 
-// =========================
+
 // ADD TO CART
-// =========================
+
 
 function addToCart() {
 
@@ -184,9 +181,8 @@ function addToCart() {
 }
 
 
-// =========================
 // BUY NOW
-// =========================
+
 
 function buyNow() {
   window.location.href = "order-success.html";

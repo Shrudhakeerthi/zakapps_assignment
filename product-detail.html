@@ -10,7 +10,7 @@
 
 <body>
 
-  <!-- NAVBAR -->
+  //NAVBAR 
   <nav class="navbar">
     <h2>ABOKICHI</h2>
 
@@ -23,17 +23,17 @@
     </ul>
   </nav>
 
-  <!-- PRODUCT DETAIL -->
+  // PRODUCT DETAIL 
   <section class="detail-page">
 
-    <!-- LEFT -->
+    // LEFT 
     <div class="detail-left">
       <div class="main-image-box">
         <img id="main-image" src="" alt="Product Image">
       </div>
     </div>
 
-    <!-- RIGHT -->
+    // RIGHT 
     <div class="detail-right">
 
       <p class="breadcrumb">Shop > Product</p>
@@ -51,24 +51,23 @@
 
       <p id="product-description" class="product-description"></p>
 
-      <!-- BUTTONS -->
+      // BUTTONS
       <div class="button-row">
         <button class="cart-btn" onclick="addToCart()">ADD TO CART</button>
         <button class="buy-btn" onclick="buyNow()">BUY NOW</button>
       </div>
 
-      <div class="wishlist">♡ WISHLIST</div>
+      <div class="wishlist"> WISHLIST</div>
 
     </div>
 
   </section>
 
-  <!-- SCRIPT -->
+  // SCRIPT FOR PRODUCTS
   <script>
 
-    // =========================
-    // PRODUCT DATA (FIXED - NO $)
-    // =========================
+    // PRODUCT DATA 
+   
 
     const products = {
 
@@ -147,9 +146,8 @@
     };
 
 
-    // =========================
     // FORMAT INR
-    // =========================
+    
 
     function formatINR(value) {
       return new Intl.NumberFormat("en-IN", {
@@ -159,18 +157,17 @@
     }
 
 
-    // =========================
+   
     // GET PRODUCT ID
-    // =========================
+  
 
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
     const product = products[id];
 
 
-    // =========================
     // LOAD PRODUCT
-    // =========================
+ 
 
     if (product) {
 
@@ -194,9 +191,9 @@
     }
 
 
-    // =========================
+   
     // CART SYSTEM
-    // =========================
+  
 
     let cartCount = Number(localStorage.getItem("cartCount")) || 0;
 

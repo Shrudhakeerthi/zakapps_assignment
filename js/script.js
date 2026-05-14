@@ -1,6 +1,6 @@
-// =========================
+
 // PRODUCT GRID SETUP
-// =========================
+
 
 const productGrid = document.querySelector(".product-grid");
 const productCards = Array.from(document.querySelectorAll(".product-card"));
@@ -12,9 +12,9 @@ const ratingFilters = document.querySelectorAll(".rating-filter");
 let activeCards = [...productCards];
 
 
-// =========================
+
 // SORTING
-// =========================
+
 
 if (sortSelect) {
   sortSelect.addEventListener("change", () => {
@@ -44,9 +44,9 @@ if (sortSelect) {
 }
 
 
-// =========================
+
 // FILTERING
-// =========================
+
 
 function filterProducts() {
 
@@ -91,9 +91,10 @@ function filterProducts() {
 }
 
 
-// =========================
+
+
 // RENDER FUNCTION
-// =========================
+
 
 function render(list) {
   if (!productGrid) return;
@@ -103,9 +104,9 @@ function render(list) {
 }
 
 
-// =========================
+
 // FILTER EVENTS
-// =========================
+
 
 flavourFilters.forEach(f =>
   f.addEventListener("change", filterProducts)
@@ -116,9 +117,9 @@ ratingFilters.forEach(f =>
 );
 
 
-// =========================
-// CART SYSTEM (LOCAL STORAGE)
-// =========================
+
+// CART SYSTEM (STORAGE)
+
 
 let cartCount = Number(localStorage.getItem("cartCount")) || 0;
 
@@ -140,18 +141,18 @@ function addToCart() {
 }
 
 
-// =========================
+
 // BUY NOW BUTTON
-// =========================
+
 
 function buyNow() {
   window.location.href = "order-success.html";
 }
 
 
-// =========================
+
 // OPTIONAL: HIGHLIGHT ACTIVE FILTER STATE (CLEAN UX)
-// =========================
+
 
 document.addEventListener("DOMContentLoaded", () => {
   filterProducts();
